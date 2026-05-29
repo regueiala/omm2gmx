@@ -1,23 +1,13 @@
-; file.mdp - Juste pour générer un TPR d'analyse (sans dynamique)
+; file.mdp - Just for generating the tpr file , no dynamics will be performed
 
-integrator              = steep     ; Pas de dynamique, donc pas besoin de thermostat
-nsteps                  = 0         ; On ne veut faire aucune étape
-
-; --- VOISINAGE ET ÉNERGIE ---
+integrator              = steep     ; No dynamics, 
+nsteps                  = 0         
 cutoff-scheme           = Verlet
-ns_type		= grid		; Method to determine neighbor list (simple, grid)
+ns_type		            = grid		
 nstlist                 = 1
 rlist                   = 1.0
 coulombtype             = PME
 rcoulomb                = 1.0
 vdwtype                 = Cut-off
 rvdw                    = 1.0
-
-; --- CONDITIONS AUX LIMITES ---
 pbc                     = xyz
-
-
-
-
-
-
