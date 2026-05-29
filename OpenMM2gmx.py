@@ -1,3 +1,47 @@
+"""
+OpenMM → GROMACS Trajectory Conversion and Centering Workflow
+=============================================================
+
+Author: Alaa REGUEI
+
+Overview
+--------
+This script provides a complete workflow to convert and process molecular dynamics
+trajectories generated with OpenMM into a format compatible with GROMACS analysis tools.
+
+It is designed to handle systems with periodic boundary conditions, including triclinic
+boxes, and has been tested on complex biomolecular systems such as membrane proteins.
+
+The workflow includes:
+    1. Generation of GROMACS-compatible topology and coordinate files (.gro, .top, .tpr)
+       from OpenMM inputs (.parm7 and system XML).
+    2. Conversion of OpenMM .dcd trajectories into GROMACS-readable .xtc format.
+       Special care is taken to correctly handle differences in box definitions between
+       OpenMM and GROMACS.
+    3. Post-processing of trajectories to remove periodic boundary jumps.
+    4. Centering of trajectories around a user-defined selection (e.g., protein COM or
+       specific residues).
+
+Features
+--------
+- Multi-trajectory support (concatenation of multiple .dcd files)
+- Flexible centering options:
+    - Center of mass (COM)
+    - Specific residues or residue ranges
+- Trajectory stride control
+- Multiple output modes:
+    - Full system trajectory (protein + solvent/non-polymers)
+    - Protein-only trajectory
+    - Both outputs
+- Handling of periodic boundary conditions
+
+Dependencies
+------------
+- GROMACS (must be installed and accessible via `gmx` command)
+- Python dependencies listed in requirements.txt
+
+"""
+
 import parmed as pmd
 import subprocess
 import MDAnalysis as mda
