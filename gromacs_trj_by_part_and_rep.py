@@ -10,6 +10,7 @@ for i in range (11,63):
     print(trajs)
     print(f"Processing trajectory for rep {i}...")
     traj = md.load(trajs, top="step5_input.parm7")
+    #traj= traj[0::10] ( if you want)
 
     # sanitize box vectors
     bv = traj.unitcell_vectors.copy()
