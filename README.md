@@ -15,7 +15,7 @@ This repository provides a workflow to:
 
 ## Author
 
-**Alaa REGUEI**, PhD Student - Université Paris Cité, BFA.
+Alaa REGUEI, PhD Student - Université Paris Cité, BFA.
 
 ## Installation
 
