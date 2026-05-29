@@ -220,8 +220,6 @@ def traj_correction(GRO_OUTPUT, TPR_OUTPUT, OUTPUT_XTC, INDEX_OUTPUT, new_group_
         log_file.write("=== Step 2: centering ===\n")
         log_file.write(result2.stdout)
         log_file.write(result2.stderr)
-        log_file.write(result3.stdout)
-        log_file.write(result3.stderr)
         log_file.write(f"\nCorrected trajectory generated: {centered_xtc}\n")
 
         if result2.returncode != 0:
